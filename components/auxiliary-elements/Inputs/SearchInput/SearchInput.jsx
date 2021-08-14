@@ -30,7 +30,7 @@ export default function SearchInput({ inputRef }) {
   const handleSearchSubmit = (e) => {
     e.preventDefault()
     if (searchInputVal.replace(/\s/g, '')?.length && query !== searchInputVal) {
-      router.push(`/${searchInputVal}?p=1`)
+      router.push(`/${encodeURI(searchInputVal)}?p=1`)
       setIsSearchInputRecOpened(false)
     }
   }
